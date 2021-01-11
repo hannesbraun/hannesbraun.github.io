@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+   <title>Hannes Braun</title>
+   <meta charset="UTF-8">
+   <meta name="author" content="Hannes Braun">
+
+   <link rel="icon" type="image/png" href="favicon.png">
+
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <header>
+      <h1>Hannes Braun</h1>
+   </header>
+
+   <nav class="navbar">
+      [<a href="https://github.com/hannesbraun/esftp">ESFTP</a>]
+      [<a href="https://github.com/hannesbraun/katarina">Katarina</a>]
+      [<a href="https://github.com/hannesbraun/Jhin3">Jhin3</a>]
+      [<a href="https://github.com/hannesbraun/4jinx">4jinx</a>]
+      [<a href="https://github.com/hannesbraun/homebrew-cask-audio">Homebrew Cask Audio</a>]
+      [<a href="https://github.com/hannesbraun/udp-on-fire">UDP on Fire</a>]
+   </nav>
+
+   <section>
+      <h1 id="katarina">Katarina</h1>
+      <p><img src="https://github.com/hannesbraun/katarina/workflows/Build/badge.svg" alt="Build Status"></p>
+      <p>Just another discord bot</p>
+      <p><em>Yes, some features of this bot are heavily inspired by <a href="https://miki.ai">Miki</a>. Thank you, dear Miki developers.</em></p>
+      <p><strong>Note:</strong> this project is still very young and may contain bugs. If you find any of those, don&#39;t hesitate to submit them.</p>
+      <h2 id="getting-started">Getting started</h2>
+      <p>Make sure you have Java 1.8 or higher installed on your system. </p>
+      <p>To build Katarina, you need the JDK (Java Development Kit). If you only want to run Katarina, the JRE (Java Runtime Environment) is enough. I recommend using <a href="https://adoptopenjdk.net">AdoptOpenJDK</a>.</p>
+      <h3 id="build">Build</h3>
+      <ul>
+         <li>Clone this repository.</li>
+         <li>On Linux or macOS run
+            <pre><code class="lang-bash">./gradlew shadowJar
+</code></pre>
+         </li>
+         <li>You will find the generated JAR file inside the directory <code>build/libs/</code>. It is named something like <code>katarina-4.0.0-all.jar</code>.</li>
+      </ul>
+      <h3 id="run">Run</h3>
+      <p>Before running Katarina for the first time, it is recommended to first generate the database.
+         To do this, run something like</p>
+      <pre><code class="lang-bash">  <span class="hljs-selector-tag">java</span> <span class="hljs-selector-tag">-jar</span> <span class="hljs-selector-tag">katarina-4</span><span class="hljs-selector-class">.0</span><span class="hljs-selector-class">.0-all</span><span class="hljs-selector-class">.jar</span> <span class="hljs-selector-tag">-d</span> <span class="hljs-selector-tag">katarina</span><span class="hljs-selector-class">.db</span> <span class="hljs-selector-tag">-m</span> <span class="hljs-selector-tag">initGifs</span>
+</code></pre>
+      <p>A file called <code>katarina.db</code> (or whatever you named it) will be created. With an SQLite Editor, adjust the following settings inside the database to your needs (table: configuration):</p>
+      <ul>
+         <li><code>bot_name</code>: the name of the bot (mainly used for the GIF stuff)</li>
+         <li><code>owner_id</code>: the user id of the bot owner</li>
+         <li><code>cmd_prefix</code>: the command prefix</li>
+      </ul>
+      <p>After this initial setup, you can run Katarina with something like</p>
+      <pre><code class="lang-bash">  <span class="hljs-selector-tag">java</span> <span class="hljs-selector-tag">-jar</span> <span class="hljs-selector-tag">katarina-4</span><span class="hljs-selector-class">.0</span><span class="hljs-selector-class">.0-all</span><span class="hljs-selector-class">.jar</span> <span class="hljs-selector-tag">-d</span> <span class="hljs-selector-tag">katarina</span><span class="hljs-selector-class">.db</span> <span class="hljs-selector-tag">-t</span> &lt;<span class="hljs-selector-tag">token</span>&gt;
+</code></pre>
+      <p>You need to replace <code>&lt;token&gt;</code> with the token of your bot.</p>
+      <p>Shutdown is available from within Discord: send <code>!shutdown</code> to Katarina as a direct message. This only works, if you are the owner of the bot (specified in the configuration table of the database).</p>
+      <h2 id="available-modules-commands">Available modules/commands</h2>
+      <p>Please refer to the <a href="USER_GUIDE.md">user guide</a>.</p>
+      <h2 id="license">License</h2>
+      <p>Katarina is licensed under the GNU Affero General Public License v3.0. For more information see <a href="LICENSE" title="GNU AGPL v3.0">LICENSE</a>.</p>
+   </section>
+</body>
+
+</html>
